@@ -1,7 +1,6 @@
 import streamlit as st
 import pyttsx3   # <-- your TTS library
 
-# ---------- TEXT TO SPEECH SETUP ----------
 engine = pyttsx3.init()
 
 def speak(text: str):
@@ -10,14 +9,12 @@ def speak(text: str):
     engine.runAndWait()
 
 
-# ---------- PAGE CONFIG ----------
 st.set_page_config(
     page_title="SukSham Predictor",
     page_icon="🎓",
     layout="wide",
 )
 
-# ---------- CUSTOM CSS ----------
 st.markdown(
     """
     <style>
@@ -92,7 +89,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# ---------- SIDEBAR ----------
 with st.sidebar:
     st.markdown("### ⚙️ Settings")
     min_percent = st.slider(
@@ -109,7 +105,7 @@ with st.sidebar:
         """
     )
 
-# ---------- HERO SECTION ----------
+
 st.markdown(
     """
     <div class="glass-card">
@@ -124,7 +120,6 @@ st.markdown(
 
 st.markdown("")
 
-# ---------- MAIN LAYOUT ----------
 left, right = st.columns([1.05, 1.2])
 
 with left:
@@ -243,7 +238,7 @@ with right:
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-# ---------- FOOTER ----------
+
 st.markdown(
     """
     <div class="footer">
